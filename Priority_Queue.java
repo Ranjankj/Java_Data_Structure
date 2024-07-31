@@ -22,3 +22,27 @@ static class Pair  implements Comparable<Pair>{
             return o.value - this.value;
         }
 }
+
+// comparator
+Comparator<Integer> comp = new Comparator<Integer>(){
+            
+            public int compare(Integer a,Integer b){
+                if(a >b){
+                    return 1;
+                }else{
+                    return -1;
+                }
+            }
+  };
+
+// how to pass comparator
+Collections.sort(list,comp);
+
+// with Lambda expression
+Collections.sort(list, (a,b)->{
+  if(a>b)
+    return 1;
+  else
+    return -1;
+})
+
